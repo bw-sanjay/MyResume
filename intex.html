@@ -1,0 +1,439 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sanjay - Video Editor & Videographer Portfolio</title>
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: 'Roboto', Arial, sans-serif;
+            background-color: #141414;
+            color: #ffffff;
+            line-height: 1.6;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        nav {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background-color: #000000;
+            z-index: 1000;
+            padding: 15px 0;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+        }
+        nav .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        nav h1 {
+            font-family: 'Bebas Neue', sans-serif;
+            font-size: 2rem;
+            color: #E50914;
+            letter-spacing: 2px;
+        }
+        nav ul {
+            list-style: none;
+            display: flex;
+            gap: 20px;
+        }
+        nav a {
+            color: #ffffff;
+            text-decoration: none;
+            font-size: 1rem;
+            font-weight: 400;
+            transition: color 0.3s ease;
+        }
+        nav a:hover {
+            color: #E50914;
+        }
+        section {
+            padding: 80px 0;
+        }
+        .section-title {
+            font-family: 'Bebas Neue', sans-serif;
+            font-size: 3rem;
+            letter-spacing: 3px;
+            text-align: center;
+            margin-bottom: 40px;
+            color: #E50914;
+        }
+        #home {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: linear-gradient(to bottom, #000000, #1c2526);
+            text-align: center;
+        }
+        #home h1 {
+            font-family: 'Bebas Neue', sans-serif;
+            font-size: 4.5rem;
+            letter-spacing: 4px;
+            margin-bottom: 20px;
+        }
+        #home p {
+            font-size: 1.5rem;
+            margin-bottom: 30px;
+            color: #b3b3b3;
+        }
+        #home a {
+            display: inline-block;
+            background-color: #E50914;
+            color: #ffffff;
+            padding: 12px 24px;
+            border-radius: 4px;
+            text-decoration: none;
+            font-weight: 700;
+            font-size: 1rem;
+            transition: background-color 0.3s ease;
+        }
+        #home a:hover {
+            background-color: #f40612;
+        }
+        #about .content {
+            max-width: 800px;
+            margin: 0 auto;
+            font-size: 1.125rem;
+            color: #b3b3b3;
+        }
+        #about p {
+            margin-bottom: 20px;
+        }
+        #experience {
+            background-color: #1c2526;
+        }
+        #experience .content {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        .job {
+            margin-bottom: 30px;
+            background-color: #2a2a2a;
+            padding: 20px;
+            border-radius: 4px;
+            transition: transform 0.3s ease;
+        }
+        .job:hover {
+            transform: scale(1.02);
+        }
+        .job h3 {
+            font-family: 'Bebas Neue', sans-serif;
+            font-size: 1.5rem;
+            color: #ffffff;
+        }
+        .job p {
+            color: #b3b3b3;
+            font-size: 1rem;
+        }
+        #projects .grid, #videos .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+        .project-card, .video-card {
+            background-color: #2a2a2a;
+            padding: 20px;
+            border-radius: 4px;
+            transition: transform 0.3s ease;
+            overflow: hidden;
+        }
+        .project-card:hover, .video-card:hover {
+            transform: scale(1.05);
+        }
+        .project-card h3, .video-card h3 {
+            font-family: 'Bebas Neue', sans-serif;
+            font-size: 1.5rem;
+            color: #ffffff;
+            margin-bottom: 10px;
+        }
+        .project-card p, .video-card p {
+            color: #b3b3b3;
+            font-size: 1rem;
+        }
+        .video-card iframe {
+            width: 100%;
+            height: 200px;
+            border: none;
+            border-radius: 4px;
+        }
+        #skills {
+            background-color: #1c2526;
+        }
+        #skills .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        .skill {
+            font-size: 1.125rem;
+            font-weight: 700;
+            color: #ffffff;
+        }
+        .progress-bar {
+            background-color: #374151;
+            height: 8px;
+            border-radius: 4px;
+            margin-top: 10px;
+            overflow: hidden;
+        }
+        .progress {
+            background-color: #E50914;
+            height: 100%;
+            border-radius: 4px;
+        }
+        #contact .content {
+            max-width: 800px;
+            margin: 0 auto;
+            text-align: center;
+            font-size: 1.125rem;
+            color: #b3b3b3;
+        }
+        #contact p {
+            margin-bottom: 10px;
+        }
+        #contact a {
+            color: #ffffff;
+            text-decoration: underline;
+            transition: color 0.3s ease;
+        }
+        #contact a:hover {
+            color: #E50914;
+        }
+        footer {
+            background-color: #000000;
+            text-align: center;
+            padding: 20px 0;
+            font-size: 0.9rem;
+            color: #b3b3b3;
+        }
+        .animate-slide-up {
+            opacity: 0;
+            transform: translateY(50px);
+            transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+        }
+        .animate-slide-up.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        @media (max-width: 768px) {
+            #home h1 {
+                font-size: 2.5rem;
+            }
+            #home p {
+                font-size: 1.2rem;
+            }
+            .section-title {
+                font-size: 2rem;
+            }
+            nav ul {
+                gap: 10px;
+            }
+            nav a {
+                font-size: 0.9rem;
+            }
+            .job, .project-card, .video-card {
+                padding: 15px;
+            }
+            .video-card iframe {
+                height: 150px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <div class="container">
+            <h1>SANJAY</h1>
+            <ul>
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#experience">Experience</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#videos">Videos</a></li>
+                <li><a href="#skills">Skills</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <section id="home">
+        <div class="container animate-slide-up">
+            <h1>Sanjay</h1>
+            <p>Video Editor & Videographer</p>
+            <a href="#contact">Get in Touch</a>
+        </div>
+    </section>
+
+    <section id="about">
+        <div class="container">
+            <h2 class="section-title">About Me</h2>
+            <div class="content animate-slide-up">
+                <p>I am a highly skilled Video Editor and Videographer with over four years of experience creating engaging, story-driven video content for platforms like social media, advertisements, short films, and corporate videos. My expertise lies in editing and post-production, with professional proficiency in Adobe Premiere Pro, Final Cut Pro, and DaVinci Resolve. I specialize in color grading, sound design, and motion graphics, bringing a unique visual identity and emotional depth to every project.</p>
+                <p>My creative process is rooted in storytelling, visual rhythm, and pacing. I craft narratives that connect with audiences and enhance brand messaging. With a solid understanding of lighting, camera angles, and composition, I ensure high-quality raw footage for seamless editing. Passionate, detail-oriented, and collaborative, I thrive in bringing clients’ visions to life while exceeding expectations.</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="experience">
+        <div class="container">
+            <h2 class="section-title">Experience</h2>
+            <div class="content">
+                <div class="job animate-slide-up">
+                    <h3>Video Editor & Graphic Designer</h3>
+                    <p>The Road Show Entertainment, Chennai | Aug 2023 - Present</p>
+                </div>
+                <div class="job animate-slide-up">
+                    <h3>Video Editor, Graphic Designer & Visual Effects</h3>
+                    <p>Chennai Adman Advertising Agency, Chennai | Sept 2022 - May 2023</p>
+                </div>
+                <div class="job animate-slide-up">
+                    <h3>Color Grading Conformist, Graphic Designer, VFX Artist</h3>
+                    <p>Pixel Arts Movie VFX, Chennai | May 2022 - Sept 2022</p>
+                </div>
+                <div class="job animate-slide-up">
+                    <h3>Videographer & Video Editor</h3>
+                    <p>White Horse Studio Production, Chennai | Jan 2021 - Mar 2022</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="projects">
+        <div class="container">
+            <h2 class="section-title">Projects</h2>
+            <div class="grid">
+                <div class="project-card animate-slide-up">
+                    <h3>Disney+ Hotstar Projects</h3>
+                    <p>Promo Editor for Uppu Puli Kaaram, Kana Kaanum Kalangal S3, Office Web Series, Heart Beat Web Series, Bigg Boss Season 7 Tamil, Chutney Sambar, Chithha, Pramalu | 2024-2025</p>
+                </div>
+                <div class="project-card animate-slide-up">
+                    <h3>MRT Music Company</h3>
+                    <p>Lyric Video Editor for 100 Independent Song Videos | 2024</p>
+                </div>
+                <div class="project-card animate-slide-up">
+                    <h3>Movie Works</h3>
+                    <p>Husband Bunny Movie Juke Box, Vellimalai Movie Lyrical Videos | 2023-2024</p>
+                </div>
+                <div class="project-card animate-slide-up">
+                    <h3>Advertisements</h3>
+                    <p>Dabur Toothpaste, Minmini Social Media App | Happy Unicorn Production | 2024</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="videos">
+        <div class="container">
+            <h2 class="section-title">My Videos</h2>
+            <div class="grid">
+                <div class="video-card animate-slide-up">
+                    <h3>Sample Video 1</h3>
+                    <iframe src="https://www.youtube.com/embed/dQw4w9WgXcQ" title="Sample Video 1" allowfullscreen></iframe>
+                    <p>Placeholder: Replace with your YouTube video URL (e.g., Disney+ Hotstar promo).</p>
+                </div>
+                <div class="video-card animate-slide-up">
+                    <h3>Sample Video 2</h3>
+                    <iframe src="https://www.youtube.com/embed/dQw4w9WgXcQ" title="Sample Video 2" allowfullscreen></iframe>
+                    <p>Placeholder: Replace with your YouTube video URL (e.g., MRT Music lyric video).</p>
+                </div>
+                <div class="video-card animate-slide-up">
+                    <h3>Sample Video 3</h3>
+                    <iframe src="https://www.youtube.com/embed/dQw4w9WgXcQ" title="Sample Video 3" allowfullscreen></iframe>
+                    <p>Placeholder: Replace with your YouTube video URL (e.g., Dabur Toothpaste ad).</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="skills">
+        <div class="container">
+            <h2 class="section-title">Skills</h2>
+            <div class="grid">
+                <div class="skill animate-slide-up">
+                    <p>DaVinci Resolve: 10/10</p>
+                    <div class="progress-bar"><div class="progress" style="width: 100%;"></div></div>
+                </div>
+                <div class="skill animate-slide-up">
+                    <p>Premiere Pro: 10/10</p>
+                    <div class="progress-bar"><div class="progress" style="width: 100%;"></div></div>
+                </div>
+                <div class="skill animate-slide-up">
+                    <p>Final Cut Pro: 8/10</p>
+                    <div class="progress-bar"><div class="progress" style="width: 80%;"></div></div>
+                </div>
+                <div class="skill animate-slide-up">
+                    <p>Photoshop: 9/10</p>
+                    <div class="progress-bar"><div class="progress" style="width: 90%;"></div></div>
+                </div>
+                <div class="skill animate-slide-up">
+                    <p>After Effects: 7/10</p>
+                    <div class="progress-bar"><div class="progress" style="width: 70%;"></div></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact">
+        <div class="container">
+            <h2 class="section-title">Contact</h2>
+            <div class="content animate-slide-up">
+                <p>Phone: +91 7200962154</p>
+                <p>Email: bwsanjayeditz@gmail.com</p>
+                <p>Location: Ramapuram, Chennai</p>
+                <p>Instagram: <a href="https://instagram.com/bwsanjay_">bwsanjay_</a></p>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <p>© 2025 Sanjay. All Rights Reserved.</p>
+    </footer>
+
+    <script>
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('nav a').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                const targetId = this.getAttribute('href').substring(1);
+                const targetElement = document.getElementById(targetId);
+                window.scrollTo({
+                    top: targetElement.offsetTop - 70,
+                    behavior: 'smooth'
+                });
+            });
+        });
+
+        // Scroll-triggered animations using Intersection Observer
+        const animateElements = document.querySelectorAll('.animate-slide-up');
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, {
+            threshold: 0.1
+        });
+
+        animateElements.forEach(element => {
+            observer.observe(element);
+        });
+    </script>
+</body>
+</html>
